@@ -9,3 +9,8 @@
 1. Learn about Type of Statement, ResultSet
 
 2.Learn about SQL Transactions (transaction lock), Scrollable ResultSet and RowSets.
+
+3)Day  3
+
+1. Learn about Updateable ResultSet, and RowSet
+
