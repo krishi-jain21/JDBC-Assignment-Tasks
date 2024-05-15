@@ -53,11 +53,15 @@ public class RecordDisplay {
      * Displays employee records from the database. If empId is provided,
      * displays records for the specified employee.
      * 
-     * 
+     * @param empId The ID of the employee to display records for. If null, all
+     *              records will be displayed.
      */
-    public void displayRecords() {
+    public void displayRecords(Integer empId) {
         String query = "SELECT employeeid AS EmployeeID, CONCAT(first_name, ' ', last_name) AS Name, title AS Title, CONCAT(address, ', ', city, ', ', country) AS Address,"
         		+ " homephone AS HomePhone FROM employee";
+        if (empId != null) {
+            query += " WHERE employeeid = ?";
+        }
         try {
             PreparedStatement statement = connection.prepareStatement(query);
             if (empId != null) {
